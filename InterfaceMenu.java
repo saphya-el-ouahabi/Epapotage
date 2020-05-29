@@ -64,7 +64,7 @@ import java.awt.event.*;
 	
 					//on ouvre l'interface du concierge 
 					Concierge c = new Concierge();
-					InterfaceGestionnaire ig = new InterfaceGestionnaire(c);
+					InterfaceConcierge ig = new InterfaceConcierge(c);
 				}   
 			}
 		

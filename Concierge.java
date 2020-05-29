@@ -7,7 +7,7 @@ import java.util.ArrayList;
 public class Concierge {
 /*VARIABLES*/		
 	private ArrayList <PapotageListener> listeEcouteurs;
-	private InterfaceConcierge interfaceGestion;
+	private InterfaceConcierge interfaceConcierge;
 	
 /*CONSTRUCTEUR*/
 	public Concierge() {	
@@ -23,8 +23,8 @@ public class Concierge {
 	public void setListeBavards(ArrayList<PapotageListener> le) {
 		this.listeEcouteurs = le;
 	}
-	public void setIg(InterfaceConcierge interfaceGestion) {
-		this.interfaceGestion=interfaceGestion;
+	public void setIg(InterfaceConcierge interfaceConcierge) {
+		this.interfaceConcierge=interfaceConcierge;
 	}
 	
 /*METHODES*/	
@@ -33,7 +33,7 @@ public class Concierge {
 	    public Bavard generateBavard(String nom){
 	        Bavard b = new Bavard(nom,this);
 	        this.addEcouteurs(b);
-	        this.interfaceGestion.afficheConnectes();
+	        this.interfaceConcierge.afficheConnectes();
 	        //et de retourner un bavard
 	        return b;
 	    }
@@ -41,16 +41,16 @@ public class Concierge {
 	    //Permet de connecter un bavard
 	    public void connecteBavard (PapotageListener b) {
 	    	b.setConnecte(true);
-	    	this.interfaceGestion.afficheConnectes();
+	    	this.interfaceConcierge.afficheConnectes();
 	    }
 	    
 	    //Permet de deconnecter un bavard
 	    public void deconnecteBavard (Bavard b) {
 	    	b.setConnecte(false);
-	    	this.interfaceGestion.afficheConnectes();
+	    	this.interfaceConcierge.afficheConnectes();
 	    }
 	
-		//Permet d'ajouter PapotageListener Ã  la listes des Ã©couteurs
+		//Permet d'ajouter PapotageListener à la listes des écouteurs
 		public void addEcouteurs(PapotageListener b){
 	        listeEcouteurs.add(b);
 	    }
@@ -61,13 +61,13 @@ public class Concierge {
 	    }
 		
 		
-	    //Permet d'envoyer un message Ã  tous les personnes 
+	    //Permet d'envoyer un message à tous les personnes 
 	    public void envoieMessageATous(PapotageEvent message , PapotageListener expediteur) {
 	        for(PapotageListener a : this.getListeEcouteurs()) {
 	        	a.getIb().afficheMessR(message,expediteur);
 	        	expediteur.getIb().afficheMessE(message, expediteur);
 	        	
-	        	interfaceGestion.afficheMess(message, expediteur, a);
+	        	interfaceConcierge.afficheMess(message, expediteur, a);
 	        }    
 	    }
 	    
@@ -76,7 +76,7 @@ public class Concierge {
 	        destinataire.getIb().afficheMessR(message,expediteur);
 	        expediteur.getIb().afficheMessE(message,destinataire);
 	        
-	        interfaceGestion.afficheMess(message,expediteur,destinataire);
+	        interfaceConcierge.afficheMess(message,expediteur,destinataire);
 	    }
 	    
 

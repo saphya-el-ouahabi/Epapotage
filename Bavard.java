@@ -1,6 +1,5 @@
 /*CLASSE BAVARD QUI IMPLEMENTE PAPOTAGELISTENER*/	
 
-
 import java.util.ArrayList;
 
 

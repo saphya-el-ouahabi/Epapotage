@@ -16,7 +16,7 @@ public class InterfaceConnexion extends JFrame implements ActionListener {
 	private JPanel panel = new JPanel();
 	
 	private static Concierge concierge = new Concierge();
-	private InterfaceGestionnaire interfaceGestion;
+	private InterfaceConcierge interfaceGestion;
 
 
 /*CONSTRUCTEUR*/
@@ -52,8 +52,8 @@ public class InterfaceConnexion extends JFrame implements ActionListener {
 	public Concierge setConcierge(Concierge concierge) {
 		return concierge = concierge;
 	}
-	public void setIg(InterfaceGestionnaire interfaceGestion) {
-		this.interfaceGestion = interfaceGestion;
+	public void setIg(InterfaceConcierge InterfaceConcierge) {
+		this.interfaceGestion = InterfaceConcierge;
 	}
 
 /*GETTER*/

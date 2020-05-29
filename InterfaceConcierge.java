@@ -1,12 +1,14 @@
+/*CLASSE DE L'INTERFACE CONCIERGE*/
+
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.event.*;
 import java.util.ArrayList;
 import javax.swing.*;
 import javax.swing.border.Border;
 
 public class InterfaceConcierge extends JFrame implements ActionListener {
-	
+
+/*VARIABLES*/
 	private Concierge concierge;	
 	private JPanel panelUn = new JPanel();
 	private JPanel panelDeux = new JPanel(); //zone pour ajouter un bavard	
@@ -19,6 +21,7 @@ public class InterfaceConcierge extends JFrame implements ActionListener {
 	private JTextPane messageReception = new JTextPane();
 	JTextArea bavardsCo = new JTextArea();	
 	
+/*CONSTRUCTEUR*/	
 	public InterfaceConcierge(Concierge consierge) {
 		super();
 		
@@ -32,7 +35,7 @@ public class InterfaceConcierge extends JFrame implements ActionListener {
 		interfaceConnexion.setIg(this);
 		
 		this.setTitle("Concierge"); //On donne un titre à l'application
-		this.setLocationRelativeTo(null); //On centre la fenetre sur l'ecran
+		setLocation(10, 10);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //On dit a l application de se fermer lors du clic sur la croix			
 		BoxLayout layout = new BoxLayout(panelUn,BoxLayout.Y_AXIS); //layout
 		panelUn.setLayout(layout); //mise en place du layout dans le panel
@@ -73,12 +76,13 @@ public class InterfaceConcierge extends JFrame implements ActionListener {
 		setVisible(true);	
 	}
 	
-	//getter
+/*GETTER*/	
 	public Concierge getConcierge() {
 		return concierge;
 	}
 	
-	//affiche tous les messages envoyes
+/*METHODES*/	
+	//Permet d'afficher les messages dans leur englobalite
 	public void afficheMess(PapotageEvent mess, PapotageListener envoyeur, PapotageListener destinataire) {		
 		 String phrase = "";		 
 		 phrase += this.message = this.message + "Message de " + envoyeur.getNom() 
@@ -88,7 +92,7 @@ public class InterfaceConcierge extends JFrame implements ActionListener {
 		 messageReception.setText(phrase);	
 	}
 	
-	//affiche les bavards connectes / deconnectes
+	//Permet d'afficher les bavards connectes / deconnectes
 	public void afficheConnectes() {
 		String bavardCo="";
 		for (PapotageListener bavard : concierge.getListeEcouteurs()) { //on parcourt la liste des bavards
@@ -102,7 +106,7 @@ public class InterfaceConcierge extends JFrame implements ActionListener {
 		}
 	}
 	
-	//bouton pour ajouter un bavard
+	//Permet de gerer l'action du bouton pour ajouter un bavard
     public void actionPerformed(ActionEvent e) {
         ArrayList<String> listeNoms = new ArrayList<String>();
         
