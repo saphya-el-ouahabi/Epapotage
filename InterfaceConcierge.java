@@ -15,7 +15,7 @@ public class InterfaceConcierge extends JFrame implements ActionListener {
 	//Jpanel
 	private JPanel panel = new JPanel();
 	private JPanel panel2 = new JPanel(); //zone pour ajouter un bavard	
-	private JLabel titre = new JLabel("Boite de réception"); 
+	private JLabel titre = new JLabel("Boite de rÃ©ception"); 
 	private JLabel titre2 = new JLabel("Bavards"); 
 	private JLabel labelNom = new JLabel("Nouveau bavard "); 
 	
@@ -29,7 +29,8 @@ public class InterfaceConcierge extends JFrame implements ActionListener {
 	//JtextPane
 	private JTextPane messageReception = new JTextPane();
 	
-	JTextArea bavardsCo = new JTextArea();	
+	//JtextArea 
+	private JTextArea bavardsCo = new JTextArea();	//pour afficher le statut des bavards 
 	
 /*CONSTRUCTEUR*/	
 	public InterfaceConcierge(Concierge concierge) {
@@ -45,7 +46,7 @@ public class InterfaceConcierge extends JFrame implements ActionListener {
 		interfaceConnexion.setIg(this);
 		
 		//Caracteristiques de la fenetre 
-		this.setTitle("Concierge"); //On donne un titre à l'application
+		this.setTitle("Concierge"); //On donne un titre Ã  l'application
 		setLocation(10, 10);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //On dit a l application de se fermer lors du clic sur la croix			
 		
@@ -57,7 +58,7 @@ public class InterfaceConcierge extends JFrame implements ActionListener {
 		panel.setBorder(zoneVide); //ajout des espaces vides au panel
 		
 		//1 - panelUn : ajout du 1er titre
-		titre.setAlignmentX(Component.CENTER_ALIGNMENT); //pour que les "titres" soient centrés - "boites de reception :"
+		titre.setAlignmentX(Component.CENTER_ALIGNMENT); //pour que les "titres" soient centrÃ©s - "boites de reception :"
 		titre.setFont(new Font("Comic Sans MS", Font.BOLD,14)); 
 		panel.add(titre); //ajout du titre au panel	  	
 		
@@ -115,7 +116,7 @@ public class InterfaceConcierge extends JFrame implements ActionListener {
 				 String phrase = "";
 
 				 phrase += this.message = this.message + "Message de " + envoyeur.getNom() 
-				 + "\n" + "à : "  + destinataire.getNom() 
+				 + "\n" + "Ã  : "  + destinataire.getNom() 
 				 + "\n"+ "sujet :" + mess.getSujet() 
 				 + "\n" + mess.getCorps()+ "\n";				
 				 messageReception.setText(phrase);	
@@ -131,11 +132,11 @@ public class InterfaceConcierge extends JFrame implements ActionListener {
 						//on recupere le pseudo du bavard 
 						bavard.getIb().afficheConnectes(); 
 						//on affiche son statut : "connecte"
-						bavardCo +=  "bavard " + bavard.getNom() + ": connecté(e) - " ; 
+						bavardCo +=  "bavard " + bavard.getNom() + ": connectÃ©(e) - " ; 
 					//si le bavard n est pas connecte	
 					}else { 
 						//on affiche son statut "deconnecte"
-						bavardCo += "bavard " + bavard.getNom() + ": déconnecté(e) - " ; 
+						bavardCo += "bavard " + bavard.getNom() + ": dÃ©connectÃ©(e) - " ; 
 					}
 					//affichage
 					bavardsCo.setText(bavardCo); 
