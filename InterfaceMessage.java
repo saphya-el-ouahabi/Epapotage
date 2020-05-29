@@ -47,7 +47,7 @@ public class InterfaceMessage extends JFrame implements ActionListener{
          
 		//Caracteristiques de la fenetre
 		setTitle("Ecrire un nouveau message");
-		this.setLocation(520,470);
+		this.setLocation(980,470);
 		
 		Border border=  BorderFactory.createEmptyBorder(5,10,5,10);
 		
