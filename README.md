@@ -8,4 +8,6 @@ Epapotage permet également de voir quelles sont les personnes en connectées et
 Pour utiliser le programme, il suffit d'avoir Eclipse (https://www.eclipse.org/downloads/) ainsi que le Java Development Kit (https://www.oracle.com/java/technologies/javase-jdk8-downloads.html), puis de télécharger le dossier Epapotage. 
 Ce dossier doit normalement contienir 10 fichiers java dont le Main. Il suffira juste de lancer ce dernier pour utiliser Epapotage.
 
+Vous trouverez aussi le diagramme UML de l'application : diagrammeUMLepapotage.class.violet.html
+
 Projet réalisé en collaboration avec @camilleyh11 .
