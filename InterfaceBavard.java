@@ -168,7 +168,7 @@ public class InterfaceBavard extends JFrame implements ActionListener {
 		
 			
 			// Permet d'afficher les messages recus dans la zone dediee
-			public void afficheMessR(PapotageEvent mess, PapotageListener envoyeur) {
+			public void afficheMessageRecu(PapotageEvent mess, PapotageListener envoyeur) {
 				 String phrase = "";
 		
 				 phrase += this.msgRecus = this.msgRecus 
@@ -181,7 +181,7 @@ public class InterfaceBavard extends JFrame implements ActionListener {
 			
 			
 			// Permet d'afficher les messages envoyes dans la zone associee
-			public void afficheMessE(PapotageEvent mess, PapotageListener destinataire) {
+			public void afficheMessageEnvoye(PapotageEvent mess, PapotageListener destinataire) {
 				 String phrase = "";
 		
 				 phrase += this.msgEnvoyes = this.msgEnvoyes 
@@ -194,7 +194,7 @@ public class InterfaceBavard extends JFrame implements ActionListener {
 			
 			
 			// Permet d'afficher les personnes qui sont connectes
-			public void afficheConnectes() {
+			public void afficherStatutBavard() {
 				String bavardCo = "";
 				
 				//si il y a aucun autre utilisateur a par celui qui est connecte

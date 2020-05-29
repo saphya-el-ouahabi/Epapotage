@@ -7,7 +7,7 @@ public interface PapotageListener {
 	public boolean isConnecte();
 	
 /*SETTER*/	
-	public void setIb(InterfaceBavard ib);
+	public void setInterfaceBavard(InterfaceBavard interfaceBavard);
 	public void setConnecte(boolean connecte); 
 
 	

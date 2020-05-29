@@ -15,7 +15,7 @@ public class InterfaceConcierge extends JFrame implements ActionListener {
 	//Jpanel
 	private JPanel panel = new JPanel();
 	private JPanel panel2 = new JPanel(); //zone pour ajouter un bavard	
-	private JLabel titre = new JLabel("Boite de rÃ©ception"); 
+	private JLabel titre = new JLabel("Boite de réception"); 
 	private JLabel titre2 = new JLabel("Bavards"); 
 	private JLabel labelNom = new JLabel("Nouveau bavard "); 
 	
@@ -29,8 +29,7 @@ public class InterfaceConcierge extends JFrame implements ActionListener {
 	//JtextPane
 	private JTextPane messageReception = new JTextPane();
 	
-	//JtextArea 
-	private JTextArea bavardsCo = new JTextArea();	//pour afficher le statut des bavards 
+	private JTextArea bavardsCo = new JTextArea();	
 	
 /*CONSTRUCTEUR*/	
 	public InterfaceConcierge(Concierge concierge) {
@@ -46,7 +45,7 @@ public class InterfaceConcierge extends JFrame implements ActionListener {
 		interfaceConnexion.setIg(this);
 		
 		//Caracteristiques de la fenetre 
-		this.setTitle("Concierge"); //On donne un titre Ã  l'application
+		this.setTitle("Concierge"); //On donne un titre à l'application
 		setLocation(10, 10);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //On dit a l application de se fermer lors du clic sur la croix			
 		
@@ -58,7 +57,7 @@ public class InterfaceConcierge extends JFrame implements ActionListener {
 		panel.setBorder(zoneVide); //ajout des espaces vides au panel
 		
 		//1 - panelUn : ajout du 1er titre
-		titre.setAlignmentX(Component.CENTER_ALIGNMENT); //pour que les "titres" soient centrÃ©s - "boites de reception :"
+		titre.setAlignmentX(Component.CENTER_ALIGNMENT); //pour que les "titres" soient centrés - "boites de reception :"
 		titre.setFont(new Font("Comic Sans MS", Font.BOLD,14)); 
 		panel.add(titre); //ajout du titre au panel	  	
 		
@@ -112,31 +111,31 @@ public class InterfaceConcierge extends JFrame implements ActionListener {
 	
 /*METHODES*/	
 			//Permet d'afficher le messages dans son englobalite
-			public void afficheMess(PapotageEvent mess, PapotageListener envoyeur, PapotageListener destinataire) {		
+			public void afficherMessage(PapotageEvent mess, PapotageListener envoyeur, PapotageListener destinataire) {		
 				 String phrase = "";
 
 				 phrase += this.message = this.message + "Message de " + envoyeur.getNom() 
-				 + "\n" + "Ã  : "  + destinataire.getNom() 
+				 + "\n" + "à : "  + destinataire.getNom() 
 				 + "\n"+ "sujet :" + mess.getSujet() 
 				 + "\n" + mess.getCorps()+ "\n";				
 				 messageReception.setText(phrase);	
 			}
 			
 			//Permet d'afficher les bavards connectes / deconnectes
-			public void afficheConnectes() {
+			public void afficherStatutBavard() {
 				String bavardCo="";
 				 //on parcourt la liste des bavards
 				for (PapotageListener bavard : concierge.getListeEcouteurs()) {
 					//si le bavard est connecte
 					if (bavard.isConnecte()) { 
 						//on recupere le pseudo du bavard 
-						bavard.getIb().afficheConnectes(); 
+						bavard.getIb().afficherStatutBavard(); 
 						//on affiche son statut : "connecte"
-						bavardCo +=  "bavard " + bavard.getNom() + ": connectÃ©(e) - " ; 
+						bavardCo +=  "bavard " + bavard.getNom() + ": connecté(e) - " ; 
 					//si le bavard n est pas connecte	
 					}else { 
 						//on affiche son statut "deconnecte"
-						bavardCo += "bavard " + bavard.getNom() + ": dÃ©connectÃ©(e) - " ; 
+						bavardCo += "bavard " + bavard.getNom() + ": déconnecté(e) - " ; 
 					}
 					//affichage
 					bavardsCo.setText(bavardCo); 
@@ -172,7 +171,7 @@ public class InterfaceConcierge extends JFrame implements ActionListener {
 		            	texte.setText("");
 		            	nouveauBavard.setBavard(bavard);
 		            	nouveauBavard.setConcierge(concierge);
-		            	bavard.setIb(nouveauBavard);
+		            	bavard.setInterfaceBavard(nouveauBavard);
 		            }
 		        }
 		    }

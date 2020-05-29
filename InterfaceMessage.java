@@ -135,7 +135,7 @@ public class InterfaceMessage extends JFrame implements ActionListener{
 		    if(e.getActionCommand().contentEquals("p")) { 
 		    	// Envoie un message a tous les destinataires
 		    	//alors le message sera envoye à tous les bavards qui ont ete cree, apparaissant dans la liste deroulante
-		    	this.bavard.envoieMessageATous(cadreObjet.getText(), cadreCorps.getText());
+		    	this.bavard.envoyerMessageATous(cadreObjet.getText(), cadreCorps.getText());
 		    	//une fois l'appuie sur le bouton est fait la fenetre se ferme
 		    	this.dispose(); 
 		    }

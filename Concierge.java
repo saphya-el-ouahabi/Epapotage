@@ -33,7 +33,7 @@ public class Concierge {
 	    public Bavard generateBavard(String nom){
 	        Bavard b = new Bavard(nom,this);
 	        this.addEcouteurs(b);
-	        this.interfaceConcierge.afficheConnectes();
+	        this.interfaceConcierge.afficherStatutBavard();
 	        //et de retourner un bavard
 	        return b;
 	    }
@@ -41,13 +41,13 @@ public class Concierge {
 	    //Permet de connecter un bavard
 	    public void connecteBavard (PapotageListener b) {
 	    	b.setConnecte(true);
-	    	this.interfaceConcierge.afficheConnectes();
+	    	this.interfaceConcierge.afficherStatutBavard();
 	    }
 	    
 	    //Permet de deconnecter un bavard
 	    public void deconnecteBavard (Bavard b) {
 	    	b.setConnecte(false);
-	    	this.interfaceConcierge.afficheConnectes();
+	    	this.interfaceConcierge.afficherStatutBavard();
 	    }
 	
 		//Permet d'ajouter PapotageListener à la listes des écouteurs
@@ -62,21 +62,21 @@ public class Concierge {
 		
 		
 	    //Permet d'envoyer un message à tous les personnes 
-	    public void envoieMessageATous(PapotageEvent message , PapotageListener expediteur) {
+	    public void envoyerMessageATous(PapotageEvent message , PapotageListener expediteur) {
 	        for(PapotageListener a : this.getListeEcouteurs()) {
-	        	a.getIb().afficheMessR(message,expediteur);
-	        	expediteur.getIb().afficheMessE(message, expediteur);
+	        	a.getIb().afficheMessageRecu(message,expediteur);
+	        	expediteur.getIb().afficheMessageEnvoye(message, expediteur);
 	        	
-	        	interfaceConcierge.afficheMess(message, expediteur, a);
+	        	interfaceConcierge.afficherMessage(message, expediteur, a);
 	        }    
 	    }
 	    
 	    //Permet d'envoyer un message au destinataire selectionne
 	    public void envoieMessage(PapotageEvent message,PapotageListener destinataire,PapotageListener expediteur) {
-	        destinataire.getIb().afficheMessR(message,expediteur);
-	        expediteur.getIb().afficheMessE(message,destinataire);
+	        destinataire.getIb().afficheMessageRecu(message,expediteur);
+	        expediteur.getIb().afficheMessageEnvoye(message,destinataire);
 	        
-	        interfaceConcierge.afficheMess(message,expediteur,destinataire);
+	        interfaceConcierge.afficherMessage(message,expediteur,destinataire);
 	    }
 	    
 

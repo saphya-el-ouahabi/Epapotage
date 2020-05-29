@@ -28,7 +28,7 @@ public class Bavard implements PapotageListener {
 	}
 
 /*SETTER*/	
-	public void setIb(InterfaceBavard interfaceBavard) {
+	public void setInterfaceBavard(InterfaceBavard interfaceBavard) {
 		this.interfaceBavard = interfaceBavard;
 	}
 
@@ -52,10 +52,10 @@ public class Bavard implements PapotageListener {
 		}
 		
 		// Permet d'envoyer un message à toutes les personnes d'Epapotage
-		public void envoieMessageATous(String sujet,String corps) {
+		public void envoyerMessageATous(String sujet,String corps) {
 			PapotageEvent papoEvent = new PapotageEvent(this,sujet,corps);
 			
-			concierge.envoieMessageATous(papoEvent, this);
+			concierge.envoyerMessageATous(papoEvent, this);
 		}
 
 
