@@ -7,7 +7,7 @@ import java.util.ArrayList;
 public class Concierge {
 /*VARIABLES*/		
 	private ArrayList <PapotageListener> listeEcouteurs;
-	private InterfaceGestionnaire interfaceGestion;
+	private InterfaceConcierge interfaceGestion;
 	
 /*CONSTRUCTEUR*/
 	public Concierge() {	
@@ -23,7 +23,7 @@ public class Concierge {
 	public void setListeBavards(ArrayList<PapotageListener> le) {
 		this.listeEcouteurs = le;
 	}
-	public void setIg(InterfaceGestionnaire interfaceGestion) {
+	public void setIg(InterfaceConcierge interfaceGestion) {
 		this.interfaceGestion=interfaceGestion;
 	}
 	
@@ -50,7 +50,7 @@ public class Concierge {
 	    	this.interfaceGestion.afficheConnectes();
 	    }
 	
-		//Permet d'ajouter PapotageListener à la listes des écouteurs
+		//Permet d'ajouter PapotageListener Ã  la listes des Ã©couteurs
 		public void addEcouteurs(PapotageListener b){
 	        listeEcouteurs.add(b);
 	    }
@@ -61,7 +61,7 @@ public class Concierge {
 	    }
 		
 		
-	    //Permet d'envoyer un message à tous les personnes 
+	    //Permet d'envoyer un message Ã  tous les personnes 
 	    public void envoieMessageATous(PapotageEvent message , PapotageListener expediteur) {
 	        for(PapotageListener a : this.getListeEcouteurs()) {
 	        	a.getIb().afficheMessR(message,expediteur);
