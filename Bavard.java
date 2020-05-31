@@ -1,4 +1,4 @@
-/*CLASSE BAVARD QUI IMPLEMENTE PAPOTAGELISTENER*/	
+/*CLASSE BAVARD QUI IMPLEMENTE PAPOTAGELISTENER */	
 
 import java.util.ArrayList;
 
@@ -44,14 +44,14 @@ public class Bavard implements PapotageListener {
 	
 /* METHODES */		
 	
-		// Permet d'envoyer un message à une personne précise
+		// Permet d'envoyer un message Ã  une personne prÃ©cise
 		public void envoyerMessage(String sujet,String corps,PapotageListener destinataire,Bavard envoyeur){
 			PapotageEvent papoEvent = new PapotageEvent(this,sujet,corps);
 			
 			this.concierge.envoieMessage(papoEvent, destinataire, envoyeur);
 		}
 		
-		// Permet d'envoyer un message à toutes les personnes d'Epapotage
+		// Permet d'envoyer un message Ã  toutes les personnes d'Epapotage
 		public void envoyerMessageATous(String sujet,String corps) {
 			PapotageEvent papoEvent = new PapotageEvent(this,sujet,corps);
 			
